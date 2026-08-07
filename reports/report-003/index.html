@@ -43,14 +43,18 @@
     </section>
 
     <section class="section">
+      <!-- Warning banner with inline styles: dark red background with bold white text -->
       <div style="background-color: #8B0000; padding: 20px; margin-bottom: 20px; text-align: center; border-radius: 8px;">
         <p style="font-size: 24px; font-weight: bold; color: #fff; margin: 0; text-transform: uppercase;">⚠ DO NOT WATCH ⚠</p>
       </div>
 
+      <!-- Responsive embedded YouTube video -->
+      <!-- Uses padding-bottom trick to maintain 16:9 aspect ratio without knowing video dimensions -->
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 20px; border-radius: 8px;">
+        <!-- YouTube embed iframe with permission attributes -->
         <iframe 
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-          src="https://www.youtube.com/embed/KCzwyFHSMdY?rel=0" 
+          src="https://www.youtube.com/embed/KCzwyFHSMdY?rel=0"  <!-- rel=0 hides recommended videos at end -->
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -58,10 +62,12 @@
         </iframe>
       </div>
 
+      <!-- Second warning banner below the video -->
       <div style="background-color: #8B0000; padding: 20px; margin-bottom: 20px; text-align: center; border-radius: 8px;">
         <p style="font-size: 24px; font-weight: bold; color: #fff; margin: 0; text-transform: uppercase;">⚠ DO NOT WATCH ⚠</p>
       </div>
 
+      <!-- Report content begins -->
       <p>
         This is one of the most horrific things I've seen in the last 47 years. This 24 second clip, which I beg you not to watch unless you wish to hand your mind over freely to the horse menace, is corrupting our youth, government, and even lowering our property values.
       </p>
@@ -108,11 +114,15 @@
         I apologize for such unfortunate news, but I'm afraid there's more. I'm sure some of you are reading this and having a good laugh. You are already lost. I cry each night as I read the comments on this YouTube video.
       </p>
 
+      <!-- Figure element with image: semantic HTML for images with captions -->
       <figure>
+        <!-- Image reference: ./filename means "in the same folder as this file" -->
         <img src="./unskippable.png" alt="YouTube comment: Unskippable" />
+        <!-- Figcaption provides context for the image -->
         <figcaption>"Unskippable." – Do you see how the horse antenna is working? Four years after the original post, and this user has seen the light and ignored it.</figcaption>
       </figure>
 
+      <!-- Another figure with image -->
       <figure>
         <img src="./dog chase.png" alt="Video screenshot: Dogs chasing the horse" />
         <figcaption>Those dogs are lost to horse kind, never to enjoy a game of fetch again. I'm so angry right now.</figcaption>
@@ -130,6 +140,7 @@
 
       <h3>If you need more proof of the psychic power of this video:</h3>
 
+      <!-- Images without captions -->
       <figure>
         <img src="./This title found you.png" alt="YouTube comment: You didn't search for this video, it found you at random" />
       </figure>

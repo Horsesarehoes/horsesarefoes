@@ -1,24 +1,34 @@
 <!DOCTYPE html>
+<!-- DOCTYPE declaration for HTML5 -->
 <html lang="en">
+<!-- Root element with language set to English -->
 <head>
+  <!-- Meta tags for character encoding and responsive design -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Page title shown in browser tab -->
   <title>Reports | Horses Are Foes</title>
 
+  <!-- SEO description for search engines and social sharing -->
   <meta
     name="description"
     content="Field reports and archival notes from Horses Are Foes about horses, the CIA, and demons."
   />
 
+  <!-- Link to external CSS stylesheet for all styling -->
   <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
+  <!-- Hero header section with navigation -->
   <header class="hero page-hero">
+    <!-- Navigation bar -->
     <nav class="nav">
+      <!-- Site logo/home link -->
       <a class="logo" href="/">Horses Are Foes</a>
 
+      <!-- Navigation links -->
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/reports/">Reports</a>
@@ -28,6 +38,7 @@
       </div>
     </nav>
 
+    <!-- Main page heading section -->
     <section class="hero-content">
       <p class="eyebrow">Reports regarding Horses, the CIA, and related topics of interest</p>
       <h1>Reports</h1>
@@ -38,17 +49,38 @@
     </section>
   </header>
 
+  <!-- Main content area -->
   <main>
+    <!-- Notice section at top of page -->
     <section class="notice">
       <strong>Notice:</strong>
       These records are maintained as part of an ongoing archive.
     </section>
 
+    <!-- Section containing blog post listings -->
     <section class="section">
       <h2>Latest Reports</h2>
 
-      <div class="blog-list">
-        <article class="blog-card">
+      <!-- Search form for filtering reports -->
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: #f5f5f5; border-radius: 8px;">
+        <label for="searchInput" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+          Search Reports by Author or Keywords:
+        </label>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="e.g., Joseph Peltusche, horses, CIA, psychic..."
+          style="width: 100%; padding: 0.75rem; font-size: 1rem; border: 2px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif;"
+        />
+        <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 0 0;">
+          <small>Tip: Search updates as you type. Clear to see all reports.</small>
+        </p>
+      </div>
+
+      <!-- Blog list container with tighter spacing -->
+      <div class="blog-list" id="blogList">
+        <!-- Individual blog card for Report 001 -->
+        <article class="blog-card" data-author="Joseph Peltusche" data-keywords="deception, truth, observation, investigation">
           <p class="eyebrow">Report 001</p>
           <h3><a href="/reports/report-001/">The World Has Lied to You</a></h3>
           <p>
@@ -56,7 +88,8 @@
           </p>
         </article>
 
-        <article class="blog-card">
+        <!-- Individual blog card for Report 002 -->
+        <article class="blog-card" data-author="Unknown" data-keywords="drugs, psychic, resilience, youth, corruption">
           <p class="eyebrow">Report 002</p>
           <h3><a href="/reports/report-002/">New Drug Discovered, Weakening Our Youth's Psychic Resilience</a></h3>
           <p>
@@ -64,22 +97,17 @@
           </p>
         </article>
 
-        <article class="blog-card">          <p class="eyebrow">Report 003</p>
+        <!-- Individual blog card for Report 003 -->
+        <article class="blog-card" data-author="Joseph Petusche" data-keywords="horses, video, viral, psychic, dogs, tree, antenna, CIA">          
+          <p class="eyebrow">Report 003</p>
           <h3><a href="/reports/report-003/">2.1 Million views… Don't be the next tree to fall.</a></h3>
           <p>
-            A detailed analysis of equine influence through viral media. By Joseph Petusche.
+            By Joseph Petusche.
           </p>
         </article>
 
-        <article class="blog-card">          <p class="eyebrow">Report 006</p>
-          <h3><a href="/reports/report-006/">Cystals, Artifacts, and Sigils: How We Lost Alfonso Chizmac</a></h3>
-          <p>
-            A Safety Advisory on the use of crystals artifacts, and sigils.
-            Under review for integrity and accuracy.
-          </p>
-        </article>
-
-        <article class="blog-card">
+        <!-- Individual blog card for Report 004 -->
+        <article class="blog-card" data-author="Unknown" data-keywords="grass, lawns, conspiracy, psyop, government, control">
           <p class="eyebrow">Report 004</p>
           <h3><a href="/reports/report-004/">Grass lawns are a PSYOP</a></h3>
           <p>
@@ -87,19 +115,89 @@
           </p>
         </article>
 
-        <article class="blog-card">
+        <!-- Individual blog card for Report 005 -->
+        <article class="blog-card" data-author="Unknown" data-keywords="Abraxas, entities, learning, observations, spiritual, influence">
           <p class="eyebrow">Report 005</p>
           <h3><a href="/reports/report-005/">What we learned from Abraxas Abaralabrabraha over the last year</a></h3>
           <p>
             Under review for Quality Assurance.
           </p>
         </article>
+
+        <!-- Individual blog card for Report 006 (was originally 003) -->
+        <article class="blog-card" data-author="Gideon Vale" data-keywords="crystals, artifacts, sigils, safety, supernatural, Alfonso Chizmac">          
+          <p class="eyebrow">Report 006</p>
+          <h3><a href="/reports/report-006/">Cystals, Artifacts, and Sigils: How We Lost Alfonso Chizmac</a></h3>
+          <p>
+            A Safety Advisory on the use of crystals artifacts, and sigils.
+            Under review for integrity and accuracy.
+          </p>
+        </article>
       </div>
     </section>
   </main>
 
+  <!-- Footer section at bottom of page -->
   <footer>
     <p>© 2026 Horses Are Foes. An archive of documented observations.</p>
   </footer>
+
+  <!-- JavaScript for report search functionality -->
+  <script>
+    // Get the search input field and blog list container
+    const searchInput = document.getElementById('searchInput');
+    const blogList = document.getElementById('blogList');
+    const blogCards = blogList.querySelectorAll('.blog-card');
+
+    // Add event listener to search input - filters as user types
+    searchInput.addEventListener('input', function() {
+      // Get the search text and convert to lowercase for case-insensitive search
+      const searchTerm = this.value.toLowerCase().trim();
+
+      // Loop through each blog card
+      blogCards.forEach(card => {
+        // Get the author and keywords from data attributes
+        const author = card.getAttribute('data-author').toLowerCase();
+        const keywords = card.getAttribute('data-keywords').toLowerCase();
+        
+        // Also get the card title text for searching
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        
+        // Check if search term matches author, keywords, or title
+        // If search box is empty, show all cards
+        if (searchTerm === '' || 
+            author.includes(searchTerm) || 
+            keywords.includes(searchTerm) ||
+            title.includes(searchTerm)) {
+          // Show the card by removing hidden display
+          card.style.display = 'article';
+        } else {
+          // Hide the card that doesn't match
+          card.style.display = 'none';
+        }
+      });
+
+      // Optional: Display a message if no results found
+      const visibleCards = Array.from(blogCards).filter(card => card.style.display !== 'none');
+      if (visibleCards.length === 0 && searchTerm !== '') {
+        // Check if message already exists
+        if (!blogList.querySelector('.no-results-message')) {
+          const message = document.createElement('p');
+          message.className = 'no-results-message';
+          message.style.textAlign = 'center';
+          message.style.color = '#999';
+          message.style.padding = '2rem';
+          message.textContent = 'No reports found matching your search.';
+          blogList.appendChild(message);
+        }
+      } else {
+        // Remove no results message if results are found
+        const message = blogList.querySelector('.no-results-message');
+        if (message) {
+          message.remove();
+        }
+      }
+    });
+  </script>
 </body>
 </html>

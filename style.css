@@ -1,44 +1,56 @@
 :root {
-  --bg: #f7efe2;
-  --ink: #1f1b18;
-  --muted: #6e5e4f;
-  --accent: #8b2f2f;
-  --accent-dark: #5e1f1f;
-  --card: #fffaf1;
-  --dark: #171312;
-  --gold: #d5a84f;
+  /* CSS Custom Properties (variables) for consistent theming */
+  --bg: #f7efe2;        /* Main background color */
+  --ink: #1f1b18;       /* Primary text color */
+  --muted: #6e5e4f;     /* Muted/secondary text color */
+  --accent: #8b2f2f;    /* Main accent color (dark red) */
+  --accent-dark: #5e1f1f; /* Darker accent for emphasis */
+  --card: #fffaf1;      /* Card/container background */
+  --dark: #171312;      /* Very dark color for contrast */
+  --gold: #d5a84f;      /* Gold accent for headings/special text */
 }
 
 * {
+  /* Apply border-box sizing to all elements for easier width/padding calculations */
   box-sizing: border-box;
 }
 
 html {
+  /* Smooth scrolling behavior when jumping to anchor links */
   scroll-behavior: smooth;
 }
 
 body {
+  /* Reset default margins */
   margin: 0;
+  /* Use Georgia serif font for a classic look */
   font-family: Georgia, "Times New Roman", serif;
+  /* Apply background and text colors from CSS variables */
   background: var(--bg);
   color: var(--ink);
+  /* Set line-height for readable text spacing */
   line-height: 1.6;
 }
 
 .hero {
+  /* Make hero section take up most of viewport height */
   min-height: 86vh;
+  /* Layered background: dark overlay on top of gradient */
   background:
     linear-gradient(rgba(20, 15, 10, 0.68), rgba(20, 15, 10, 0.68)),
     radial-gradient(circle at top left, #6a3b22, #171312);
+  /* White text on dark background */
   color: white;
   padding: 1.25rem;
 }
 
 .page-hero {
-  min-height: 58vh;
+  /* Shorter hero for internal pages like reports - reduced to not cover content */
+  min-height: 35vh;
 }
 
 .nav {
+  /* Container for navigation elements */
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
@@ -49,12 +61,14 @@ body {
 }
 
 .nav-links {
+  /* Container for all navigation links */
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
 .nav a {
+  /* Navigation link styling */
   color: #f7efe2;
   text-decoration: none;
   font-weight: bold;
@@ -62,11 +76,13 @@ body {
 }
 
 .nav a:hover {
+  /* Hover effect for better interactivity */
   opacity: 1;
   text-decoration: underline;
 }
 
 .logo {
+  /* Site logo styling in navigation */
   font-size: 1.35rem;
   font-weight: bold;
   letter-spacing: 0.04em;
@@ -74,6 +90,7 @@ body {
 }
 
 .hero-content {
+  /* Main content area inside hero section */
   max-width: 900px;
   margin: 20vh auto 0;
   text-align: center;
@@ -81,6 +98,7 @@ body {
 }
 
 .eyebrow {
+  /* Small decorative text above main headings */
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -88,12 +106,14 @@ body {
 }
 
 h1 {
+  /* Main page heading */
   font-size: clamp(3rem, 8vw, 6.8rem);
   line-height: 0.92;
   margin: 0.3em 0;
 }
 
 .subtitle {
+  /* Secondary text below main heading */
   max-width: 760px;
   margin: 0 auto 2rem;
   color: #f3e4ca;
@@ -101,6 +121,7 @@ h1 {
 }
 
 .button {
+  /* Call-to-action button styling */
   display: inline-block;
   background: var(--gold);
   color: var(--dark);
@@ -116,4 +137,76 @@ h1 {
   max-width: 1050px;
   margin: 1.5rem auto 3rem;
   background: #fff6d8;
-  border: 2px solid var(--
+  border: 2px solid var(--accent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.section {
+  max-width: 1050px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+/* Blog listing styles */
+.blog-list {
+  /* Container for blog card grid */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-card {
+  /* Individual blog post card */
+  margin: 0;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 8px;
+}
+
+.blog-card .eyebrow {
+  /* Tighten spacing for eyebrow text in cards */
+  margin: 0 0 0.25rem 0;
+}
+
+.blog-card h3 {
+  /* Reduce margin for blog title */
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.blog-card p {
+  /* Reduce paragraph margins inside cards */
+  margin: 0.25rem 0;
+}
+
+.blog-card a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
