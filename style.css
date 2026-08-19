@@ -210,3 +210,26 @@ footer {
   padding: 2rem;
   margin-top: 3rem;
 }
+
+/* Global responsive helpers */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Make article/card content more compact on small screens */
+.card { padding: 1rem; }
+
+@media (max-width: 720px) {
+  .hero { min-height: 45vh; padding: 0.75rem; }
+  .hero-content { margin: 8vh auto 0; padding-bottom: 1rem; }
+  h1 { font-size: clamp(1.8rem, 7vw, 3rem); }
+  .section { padding: 0 0.75rem; }
+  .nav { padding: 0.5rem; }
+}
+
+@media (max-width: 420px) {
+  body { font-size: 15px; }
+  h1 { font-size: clamp(1.6rem, 9vw, 2.4rem); }
+}
+
+/* Global edge-image helper used by report pages: cover on desktop, contain on small screens to avoid cropping in Safari */
+.edge-image { width:100%; height:170px; object-fit:cover; display:block; margin:0; border-radius:0; }
+@media (max-width:420px) { .edge-image { height:auto; object-fit:contain; } }
